@@ -8,11 +8,11 @@ public class SuitTest {
     @Test
     public void HeartsTest() {
         // Given
-        Suit k = Suit.HEARTS;
+        Suit s = Suit.HEARTS;
 
         // When
         String expected = "HEARTS";
-        String actual = k.name();
+        String actual = s.name();
 
         // Then
         Assert.assertEquals(expected, actual);
@@ -21,11 +21,11 @@ public class SuitTest {
     @Test
     public void SpadesTest() {
         // Given
-        Suit k = Suit.SPADES;
+        Suit s = Suit.SPADES;
 
         // When
         String expected = "SPADES";
-        String actual = k.name();
+        String actual = s.name();
 
         // Then
         Assert.assertEquals(expected, actual);
@@ -34,11 +34,11 @@ public class SuitTest {
     @Test
     public void DiamondsTest() {
         // Given
-        Suit k = Suit.DIAMONDS;
+        Suit s = Suit.DIAMONDS;
 
         // When
         String expected = "DIAMONDS";
-        String actual = k.name();
+        String actual = s.name();
 
         // Then
         Assert.assertEquals(expected, actual);
@@ -47,11 +47,24 @@ public class SuitTest {
     @Test
     public void ClubsTest() {
         // Given
-        Suit k = Suit.CLUBS;
+        Suit s = Suit.CLUBS;
 
         // When
         String expected = "CLUBS";
-        String actual = k.name();
+        String actual = s.name();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getSuitTest() {
+        // Given
+        Suit s = Suit.HEARTS;
+
+        // When
+        String expected = "HEARTS";
+        String actual = s.getSuit();
 
         // Then
         Assert.assertEquals(expected, actual);
