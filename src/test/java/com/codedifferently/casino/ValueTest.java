@@ -3,73 +3,191 @@ package com.codedifferently.casino;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.EnumSet;
+
 public class ValueTest {
     @Test
     public void ValueConstructorTest(){
-        //Given
-        String expectedValue = "1234567891011";
+        // Given
+        String expectedValue = "1234567891011111213";
+        StringBuilder actualValue = new StringBuilder();
 
-        //Then
-        Value aceValue = Enum.valueOf(Value.class, "ACEVALUEOF1");
-        Value twoValue = Enum.valueOf(Value.class, "TWO");
-        Value threeValue = Enum.valueOf(Value.class, "THREE");
-        Value fourValue = Enum.valueOf(Value.class, "FOUR");
-        Value fiveValue = Enum.valueOf(Value.class, "FIVE");
-        Value sixValue = Enum.valueOf(Value.class, "SIX");
-        Value sevenValue = Enum.valueOf(Value.class, "SEVEN");
-        Value eightValue = Enum.valueOf(Value.class, "EIGHT");
-        Value nineValue = Enum.valueOf(Value.class, "NINE");
-        Value tenValue = Enum.valueOf(Value.class, "TEN");
-        Value aceSecondValue = Enum.valueOf(Value.class, "ACEVALUEOF11");
-        String actualValue = String.valueOf(String.format("%s%s%s%s%s%s%s%s%s%s%s", aceValue.getValue(), twoValue.getValue(),threeValue.getValue(),fourValue.getValue(),fiveValue.getValue(), sixValue.getValue(), sevenValue.getValue(), eightValue.getValue(), nineValue.getValue(), tenValue.getValue(), aceSecondValue.getValue()));
+        // Then
+        EnumSet.allOf(Value.class).forEach(value -> actualValue.append(value.getValue()));
 
-
-        //When
-        Assert.assertEquals("Testing constructor",expectedValue, actualValue);
+        // When
+        Assert.assertEquals("Testing constructor", expectedValue, actualValue.toString());
 
     }
     @Test
-    public void getValueTest(){
+    public void getOneValue(){
         //Given
-        int expectedAceValue1 = 1;
-        int expectedTwoValue = 2;
-        int expectedThreeValue = 3;
-        int expectedFourValue = 4;
-        int expectedFiveValue = 5;
-        int expectedSixValue = 6;
-        int expectedSevenValue = 7;
-        int expectedEightValue = 8;
-        int expectedNineValue = 9;
-        int expectedTenValue = 10;
-        int expectedAceValue11 = 11;
+        int expectedOneValue = 1;
 
         //Then
-        int aceValue1 = Value.ACEVALUEOF1.getValue();
-        int twoValue = Value.TWO.getValue();
-        int threeValue = Value.THREE.getValue();
-        int fourValue = Value.FOUR.getValue();
-        int fiveValue = Value.FIVE.getValue();
-        int sixValue = Value.SIX.getValue();
-        int sevenValue = Value.SEVEN.getValue();
-        int eightValue = Value.EIGHT.getValue();
-        int nineValue = Value.NINE.getValue();
-        int tenValue = Value.TEN.getValue();
-        int aceValue11 = Value.ACEVALUEOF11.getValue();
-
+        int oneValue = Value.ONE.getValue();
 
         //When
-        Assert.assertEquals("Testing constructor",expectedAceValue1, aceValue1);
-        Assert.assertEquals("Testing constructor",expectedTwoValue, twoValue);
-        Assert.assertEquals("Testing constructor",expectedThreeValue, threeValue);
-        Assert.assertEquals("Testing constructor",expectedFourValue, fourValue);
-        Assert.assertEquals("Testing constructor",expectedFiveValue, fiveValue);
-        Assert.assertEquals("Testing constructor",expectedSixValue, sixValue);
-        Assert.assertEquals("Testing constructor",expectedSevenValue, sevenValue);
-        Assert.assertEquals("Testing constructor",expectedEightValue, eightValue);
-        Assert.assertEquals("Testing constructor",expectedNineValue, nineValue);
-        Assert.assertEquals("Testing constructor",expectedTenValue, tenValue);
-        Assert.assertEquals("Testing constructor",expectedAceValue11, aceValue11);
+        Assert.assertEquals("Testing constructor",expectedOneValue, oneValue);
 
+    }
+    @Test
+    public void getTwoValue(){
+        //Given
+        int expectedTwoValue = 2;
+
+        //Then
+        int twoValue = Value.TWO.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedTwoValue, twoValue);
+
+    }
+    @Test
+    public void getThreeValue(){
+        //Given
+        int expectedThreeValue = 3;
+
+        //Then
+        int threeValue = Value.THREE.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedThreeValue, threeValue);
+
+    }
+    @Test
+    public void getFourValue(){
+        //Given
+        int expectedFourValue = 4;
+
+        //Then
+        int fourValue = Value.FOUR.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedFourValue, fourValue);
+
+    }
+    @Test
+    public void getFiveValue(){
+        //Given
+        int expectedFiveValue = 5;
+
+        //Then
+        int fiveValue = Value.FIVE.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedFiveValue, fiveValue);
+
+    }
+    @Test
+    public void getSixValue(){
+        //Given
+        int expectedSixValue = 6;
+
+        //Then
+        int sixValue = Value.SIX.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedSixValue, sixValue);
+
+    }
+    @Test
+    public void getSevenValue(){
+        //Given
+        int expectedSevenValue = 7;
+
+        //Then
+        int sevenValue = Value.SEVEN.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedSevenValue, sevenValue);
+
+    }
+    @Test
+    public void getEightValue(){
+        //Given
+        int expectedEightValue = 8;
+
+        //Then
+        int eightValue = Value.EIGHT.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedEightValue, eightValue);
+
+    }
+    @Test
+    public void getNineValue(){
+        //Given
+        int expectedNineValue = 9;
+
+        //Then
+        int nineValue = Value.NINE.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedNineValue, nineValue);
+
+    }
+    @Test
+    public void getTenValue(){
+        //Given
+        int expectedTenValue = 10;
+
+        //Then
+        int tenValue = Value.TEN.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedTenValue, tenValue);
+
+    }
+    @Test
+    public void getAceValue(){
+        //Given
+        int expectedAceValue = 11;
+
+        //Then
+        int aceValue1 = Value.ACE.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedAceValue, aceValue1);
+
+    }
+
+    @Test
+    public void getJackValue(){
+        //Given
+        int expectedJackValue = 11;
+
+        //Then
+        int jackValue = Value.JACK.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedJackValue, jackValue);
+
+    }
+
+    @Test
+    public void getQueenValue(){
+        //Given
+        int expectedQueenValue = 12;
+
+        //Then
+        int queenValue = Value.QUEEN.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedQueenValue, queenValue);
+
+    }
+
+    @Test
+    public void getKingValue(){
+        //Given
+        int expectedKingValue = 13;
+
+        //Then
+        int kingValue = Value.KING.getValue();
+
+        //When
+        Assert.assertEquals("Testing constructor",expectedKingValue, kingValue);
 
     }
 
