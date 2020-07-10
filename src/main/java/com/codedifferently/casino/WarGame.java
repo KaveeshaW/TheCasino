@@ -11,6 +11,7 @@ public class WarGame extends Game
         System.out.println("Welcome to the Card Game War!");
         System.out.println("There are 2 players for this game.");
         System.out.println();
+
         super.playerOne = new Player("Bill", new Deck().generateDeck(5));
         super.playerTwo = new Player("Mandy", new Deck().generateDeck(5));
 
@@ -24,27 +25,32 @@ public class WarGame extends Game
 
             int playerOneCardValue = super.playerOne.getHand().get(i).getValue().getValue();
             int playerTwoCardValue = super.playerTwo.getHand().get(i).getValue().getValue();
-            if(playerOneCardValue > playerTwoCardValue)
-            {
-                System.out.println("Nice! " + super.playerOne.getName() + " you won this round.");
-                super.playerOne.setScore(score1++);
-            }
-            if(playerOneCardValue < playerTwoCardValue)
-            {
-                System.out.println("Nice! " + super.playerTwo.getName() + " you won this round.");
-                super.playerTwo.setScore(score2++);
-            }
-            if(playerOneCardValue == playerTwoCardValue)
-            {
-                System.out.println("issa tie");
-            }
+
+            checkScore(playerOneCardValue, playerTwoCardValue, score1, score2);
+
             System.out.println();
         }
 
         checkStandings();
     }
 
-
+    public void checkScore(int playerOneCardValue, int playerTwoCardValue, int score1, int score2)
+    {
+        if(playerOneCardValue > playerTwoCardValue)
+        {
+            System.out.println("Nice! " + super.playerOne.getName() + " you won this round.");
+            super.playerOne.setScore(score1++);
+        }
+        if(playerOneCardValue < playerTwoCardValue)
+        {
+            System.out.println("Nice! " + super.playerTwo.getName() + " you won this round.");
+            super.playerTwo.setScore(score2++);
+        }
+        if(playerOneCardValue == playerTwoCardValue)
+        {
+            System.out.println("issa tie");
+        }
+    }
 
     @Override
     public void resetGame()
